@@ -49,7 +49,17 @@ if(isset($_POST['Button'])){
     }
     if($erfolgt){
         echo "Daten konnten gespeichert werden! <br>";
-        $Daten = $_POST;
+        $name = $_POST['Vorname'];
+        $email = $_POST['Email'];
+        $sprache = $_POST['Intervall'];
+
+        $file = fopen('newsletterAnmeldungen.txt', 'a');
+
+        if(!$file){
+            die("Die Datei konnte nicht geöffnet werden!");
+        }
+        fwrite($file, "Daten : ". $name . " , " . $email . " , ". $sprache . "\n" );
+        fclose($file);
     }
     else{
         echo "Aus den zuvor genannten Problemen können die Daten nicht gespeichert werden! <br>";

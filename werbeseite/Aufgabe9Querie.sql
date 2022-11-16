@@ -1,0 +1,3 @@
+CREATE TABLE besucher(
+    id INT8 NOT NULL AUTO_INCREMENT
+);

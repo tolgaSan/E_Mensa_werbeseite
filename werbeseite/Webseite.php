@@ -6,10 +6,6 @@
 -->
 <?php
 include 'Gerichte.php';
-//Das Include funktioniert nicht richtig. Muss man im Tutorium nachfragen, da es funktioniert wenn ich das
-//Array hier reinsetze was eigentlich das Include erledigen sollte.
-
-//Das Gericht1 = Gerichte[0] , PreisI[0], PreisE[0] :
 $link=mysqli_connect(
     "127.0.0.1",
     "root",
@@ -20,6 +16,67 @@ $link=mysqli_connect(
 if (!$link) {
     echo "Verbindung fehlgeschlagen: ", mysqli_connect_error();
     exit();
+}
+
+function anzahlNewsletteranmeldungen(){
+    $readfile = "newsletterAnmeldungen.txt";
+    $zeilen = -1;
+    $openfile = fopen($readfile, "r");
+    while(!feof($openfile)){
+        $line = fgets($openfile);
+        $zeilen++;
+    }
+    fclose($openfile);
+    return $zeilen;
+}
+
+function anzahlSpeisen(){
+    $link=mysqli_connect(
+        "127.0.0.1",
+        "root",
+        "root",
+        "emensawerbeseite"
+    );
+    if(!$link){
+        echo "Verbindung zu Datenbank konnte nicht hergestellt werden: ".mysqli_connect_error();
+        exit();
+    }
+
+    $sql = "SELECT COUNT(name) AS anzahlSpeisen FROM gericht";
+    $result = mysqli_query($link, $sql);
+    $zeile = mysqli_fetch_array($result);
+
+    mysqli_free_result($result);
+    mysqli_close($link);
+    echo $zeile[0];
+
+
+}
+
+function anzahlBesucher(){
+
+    $link=mysqli_connect(
+        "127.0.0.1",
+        "root",
+        "root",
+        "emensawerbeseite"
+    );
+    if(!$link){
+        echo "Verbindung zu Datenbank konnte nicht hergestellt werden: ".mysqli_connect_error();
+        exit();
+    }
+
+    $sql2 = "INSERT INTO besucher() VALUES ()";
+    $link->query($sql2);
+
+
+    $sql = "SELECT COUNT(id) FROM besucher";
+    $result = mysqli_query($link, $sql);
+    $zeile = mysqli_fetch_array($result);
+
+    mysqli_free_result($result);
+    mysqli_close($link);
+    echo $zeile[0];
 }
 ?>
 <html lang="en">
@@ -59,24 +116,10 @@ if (!$link) {
             At varius vel pharetra vel turpis nunc eget lorem dolor. Feugiat vivamus at augue eget arcu dictum.</p>
 
         <h2 id="koestlichkeitenanker">Köstlichkeiten, die Sie erwarten</h2>
-        <!-- <table id="Speisen">
-           <thead>
-               <th>Bilder</th>
-               <th>Gericht</th>
-               <th>Preis intern</th>
-               <th>Preis Extern</th>
-           </thead> -->
         <?php
         for ($i = 0; $i < count($meal['Gerichte']); $i++){
             echo "<tr>";
             $picture = $meal['Bild'][$i];
-
-            /*
-         <td><img src="./img/<?php echo $picture ?>.jpg" width="200px" height="150px"></td>
-         <td><?php echo $meal['Gerichte'][$i] ;?></td>
-         <td><?php echo $meal['PreisI'][$i]; ?></td>
-         <td><?php echo $meal['PreisE'][$i]; ?></td>*/ ?>
-            <?php
         }
 
 
@@ -147,48 +190,10 @@ if (!$link) {
 
         <h2 id="zahlenanker">E Mensa in Zahlen</h2>
         <div id="kleineTabelle">
-            <div id="spalte1">X Besucher</div>
-
-            <?php function anzahlNewsletteranmeldungen(){
-                $readfile = "newsletterAnmeldungen.txt";
-                $zeilen = 0;
-                $openfile = fopen($readfile, "r");
-                while(!feof($openfile)){
-                    $line = fgets($openfile);
-                    $zeilen++;
-                }
-                fclose($openfile);
-                return $zeilen;
-            }
-            ?>
+            <div id="spalte1"><?php echo anzahlBesucher() ?> Besucher</div>
 
             <div id='spalte2'><?php echo anzahlNewsletteranmeldungen() ?> Anmeldungen zum Newsletter</div>
 
-            <?php function anzahlSpeisen(){
-                $link=mysqli_connect(
-                    "127.0.0.1",
-                    "root",
-                    "root",
-                    "emensawerbeseite"
-                );
-                if(!$link){
-                    echo "Verbindung zu Datenbank konnte nicht hergestellt werden: ".mysqli_connect_error();
-                    exit();
-                }
-
-                $sql = "SELECT COUNT(name) AS anzahlSpeisen FROM gericht";
-                $result = mysqli_query($link, $sql);
-                $zeile = mysqli_fetch_array($result);
-
-                mysqli_free_result($result);
-                mysqli_close($link);
-                echo $zeile[0];
-
-
-            }
-
-
-            ?>
             <div id="spalte3"><?php
                 echo anzahlSpeisen(); ?> Speisen</div>
 
