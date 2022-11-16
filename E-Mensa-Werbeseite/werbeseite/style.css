@@ -1,0 +1,157 @@
+
+*{font-family: Cambria;}
+#header{
+    display:grid;
+    grid-template-columns: 350px auto 350px;
+    text-align: center;
+    gap: 10px;
+    margin: 10px;
+}
+#header > div{
+    border: 3px solid turquoise;
+
+}
+#box{
+    border-top: 2px solid black;
+    padding-top: 10px;
+
+    display:grid;
+    grid-template-columns: 350px auto 350px;
+    gap: 10px;
+    margin: 10px;
+}
+#linkeSpalte{
+    height: 1500px;}
+#content{
+
+}
+#rechteSpalte{
+    height: 1500px;}
+
+#kleineTabelle{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    margin-left: 50px;
+}
+#spalte3{
+    position: relative;
+    left: 45%;
+}
+#image{
+    width: auto;
+    height: 300px;
+}
+h2{
+    font-weight: bold;
+    font-size: 25px;
+
+}
+h3{
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}
+.pborder{
+    border: 2px solid black;
+    padding: 5px;
+}
+#Speisen thead th{
+    border: 2px solid black;
+}
+#Speisen{
+    width: 100%;
+}
+#Speisen td{
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    text-align: center;
+}
+#newslettergrid{
+    display:grid;
+    grid-template-columns: auto auto auto;
+}
+
+footer ul{
+    float:left;
+    text-align: center;
+    padding-left: 250px;
+}
+footer ul li{
+    border-right: 3px solid black;
+    border-right-width: 2px;
+    list-style-type: none;
+    display: inline;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+#footercenter{
+    border-top: 2px solid black;
+    text-align: center;
+}
+#wichtig{
+
+    padding-left: 300px;
+    text-align: left;
+}
+#logo{
+
+
+    padding-top: 20px;
+}
+#menu{
+    text-align: center;
+}
+#reitermenu{
+
+    list-style-type: none;
+    float:left;
+    margin-top: 45px;
+    font-size: 25px;
+    letter-spacing: 3px;
+    word-spacing: 10px;
+
+}
+#reitermenu li{
+
+    display: inline;
+
+}
+#LabelVorname{
+    position:relative;
+    top :-20px;
+    left: 4px;
+}
+#vorname {
+    position: relative;
+    left: -60px;
+}
+#LabelEmail{
+    position: relative;
+    top: -20px;
+}
+#email{
+    position: relative;
+    left : -50px;
+}
+#DatenbankTable{
+    width: 100%;
+    text-align: center;
+    height: 7%;
+}
+#Essen{
+    text-align: left;
+}
+#GerichtAllergen{
+    position: relative;
+    left:25%;
+    width: 50%;
+}
+#AllergenÜberschrift{
+    position: relative;
+    left: 30%;
+}
+#zahlenanker{
+    position: relative;
+    left: 40%;
+}
