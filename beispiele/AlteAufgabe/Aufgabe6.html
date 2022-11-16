@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+- Praktikum DBWT. Autoren:
+- Kenny, Rohlf, 3517996
+- Tolga, Sanli, 3236111
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Beschreibung vom Header Anfrage und Antwort</h3>
+<p>HTTP verwendet die GET Methode, um Sachen vom /hochschule/bibliothek anzufragen. Der Status als Antowrt mit 200 bedeutet OK, d.h. alles ist gut gelaufen
+    Dann sieht man auf der Tabelle den Typ(html) sowie die übertragene Dateigröße. Auf der rechten Seite sieht man die Antwortkopfzeilen und Anfragekopfzeilen.
+</p>
+<h3>Beschreibung 5 Attribute vom HTTP Header</h3>
+<p>Attribut Accept gibt die Formate und ähnliches als Antwort bzw. die er unterstützt z.B. application/xml. Desweiteren wird nach dringlichkeit mittels q="" gegeben.
+Standartmäßig ist der q=1 gesetzt. In diesem Beispiel ist */*,q=0.8 gesetzt, was soviel bedeutet wie "sende mir erst das, was nach Accept steht und erst
+    dann die restlichen Sachen."</p>
+<p>Host ist die Domain, an dem die Anfrage wurde geschickt wurde</p>
+<p>User-Agent zeigt den benutzten Browser an.</p>
+<p>Server zeigt an, auf welchem Server die Dateien stehen.</p>
+<p>Date zeigt den Datum und die Uhrzeit an, wann die Antwort kam.</p>
+<h3>Beschreibung der Anfrage/Antwort sowie jedes Attribut im HTTP Header</h3>
+<p>Das erste was lädt, ist anscheinend ein Favicon. Als zweite kommt die Anfrage an die Seite schließendlich kommt mit der GET Methode die 200,
+was bedeutet, dass alles in Ordnung war. Nachdem abschicken erhalten wir den Status 404. Das bedeutet die Seite existiert nicht.</p>
+<p>anschließend wären da die Attribute:
+    access-control-allow-credentials true //Zugang
+    access-control-allow-origin http://localhost:63342 //Herkunft, auf das eingegriffene Element
+    content-length 92 //Datengröße
+    content-type text/html //Kontent besteht aus html
+    date Tue, 04 Oct 2022 16:20:06 GMT //datum der Antwort
+    server PhpStorm 2022.2.2 //Auf Php-server(localhost, weil auf Gerät)
+    vary origin
+    X-Content-Type-Options nosniff
+    x-frame-options SameOrigin
+    x-xss-protection 1; mode=block
+
+    Accept text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8 //Formate, die akzeptiert werden, dringlichkeit
+    Accept-Encoding gzip, deflate, br
+    Accept-Language de,en-US;q=0.7,en;q=0.3 // Deutsche Sprache hat priorität
+    Connection keep-alive //Verbindung wird aufrechterhalten
+    Content-Length 19 //Dateigröße der Anfrage
+    Content-Type application/x-www-form-urlencoded
+    Cookie Phpstorm-c3ef977e=774ae840-b463-4c30-845d-b380b042c9dd
+    Host localhost:63342
+    Origin http://localhost:63342
+    Referer http://localhost:63342/E-Mensa%20Werbeseite/beispiele/newsletteranmeldung.html?_ijt=7040jbqsbgmmi6fpu6f02s7cq&_ij_reload=RELOAD_ON_SAVE
+    Sec-Fetch-Dest document
+    Sec-Fetch-Mode navigate
+    Sec-Fetch-Site same-origin
+    Sec-Fetch-User ?1
+    Upgrade-Insecure-Requests 1
+    User-Agent Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:105.0) Gecko/20100101 Firefox/105.0</p>
+<p></p>
+</body>
+</html>

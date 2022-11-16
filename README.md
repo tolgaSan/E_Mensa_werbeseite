@@ -1,2 +1,3 @@
-# E_Mensa_werbeseite
-DBWT Praktikum
+# E-Mensa-Werbeseite
+ Praktikum DBWT 
+No copy&paste, da man die Aufgaben eh erklären muss. 
