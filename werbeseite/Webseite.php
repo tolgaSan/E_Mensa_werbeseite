@@ -70,7 +70,7 @@ function anzahlBesucher(){
     $link->query($sql2);
 
 
-    $sql = "SELECT COUNT(id) FROM besucher";
+    $sql = "SELECT MAX(id) FROM besucher";
     $result = mysqli_query($link, $sql);
     $zeile = mysqli_fetch_array($result);
 
@@ -126,8 +126,9 @@ function anzahlBesucher(){
         $sqlRandom = "SELECT name, beschreibung FROM gericht ORDER BY RAND() limit 5";
         $resultsRandom = mysqli_query($link, $sqlRandom);
 
-        echo "<table>";
+        echo '<table id ="randomgerichte" border ="1">';
         echo "<th>5 zufällige Gerichte</th>";
+        echo "<th>Beschreiung</th>";
         while($zeileRandom = mysqli_fetch_array($resultsRandom, MYSQLI_ASSOC)){
 
             echo "<tr>";
@@ -135,20 +136,28 @@ function anzahlBesucher(){
             echo "<td>".$zeileRandom['beschreibung']."</td>";
             echo "</tr>";
         }
-        echo "</table>";
+        echo "</table><br>";
 
-        $sql = "SELECT gericht.name, preis_intern, preis_extern, code
-                    FROM gericht 
+
+        /* hier weiter machen
+        SELECT name, preis_intern, preis_extern, GROUP_CONCAT(a.code) FROM gericht g JOIN gericht_hat_allergen a ON g.id = a.gericht_id GROUP BY name ASC
+        Das ist richtig, will nur nicht ausführen!
+        */
+
+        $sql ="SELECT gericht.name, preis_intern, preis_extern, code
+                    FROM gericht
                     LEFT OUTER JOIN gericht_hat_allergen ON gericht.id=gericht_hat_allergen.gericht_id
                     GROUP BY name ASC
-                    ORDER BY name ASC LIMIT 5;";
+                    ORDER BY name ASC LIMIT 5;" ;
+
+
 
         $results = mysqli_query($link, $sql);
 
         if(!$results){
             die("ungültige Abfrage".mysqli_error());
         }
-        echo '<table border="1">';
+        echo '<table border="1" id="fünfgerichte">';
         echo "<th>Gericht</th> <th>Preis intern</th> <th>Preis Extern</th> <th>Allergen</th>";
         while($zeile = mysqli_fetch_array($results, MYSQLI_ASSOC)){
 
@@ -163,7 +172,7 @@ function anzahlBesucher(){
         }
         echo "</table>";
 
-        echo "<br>Folgende Allergencodes enthalten<br>";
+        echo "<h2 id ='überschriftallergen'>Folgende Allergencodes enthalten</h2>";
         $sql2 = "SELECT code, name  FROM allergen";
         $resultsAllergene = mysqli_query($link, $sql2);
 
@@ -171,7 +180,7 @@ function anzahlBesucher(){
         if(!$resultsAllergene){
             die("ungültige Abfrage".mysqli_error());
         }
-        echo "<table>";
+        echo "<table id='allergentable' border ='1'>";
         echo "<th>Code</th><th>Allergen</th> ";
         while($zeile2 = mysqli_fetch_array($resultsAllergene, MYSQLI_ASSOC)){
 
