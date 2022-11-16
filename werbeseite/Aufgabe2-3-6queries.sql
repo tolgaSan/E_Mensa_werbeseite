@@ -1,4 +1,5 @@
 /* SOLLTE MAN DIESE MAL BRAUCHEN!
+DROP DATABASE emensawerbeseite;
 DROP TABLE allergen;
 DROP TABLE gericht;
 DROP TABLE kategorie;
@@ -63,11 +64,18 @@ SELECT name, beschreibung FROM gericht ORDER BY name ASC LIMIT 5;
 SELECT name, beschreibung FROM gericht ORDER BY name ASC LIMIT 10 OFFSET 5;
 SELECT typ FROM allergen GROUP BY typ;
 SELECT name FROM gericht WHERE name LIKE 'K%';
-/* Stichpunkt 9 nicht verstanden */
 SELECT id, name FROM gericht Where name LIKE '%suppe%';
+/* Stichpunkt 9 nicht verstanden */
+SELECT * FROM Kategorie
+WHERE eltern_id is NULL;
 UPDATE allergen SET name = 'Kamut' WHERE code = 'a6';
-INSERT INTO gericht (`id`, `name`, `beschreibung`, `erfasst_am`, `vegan`, `vegetarisch`, `preis_intern`, `preis_extern`) VALUES
-    (21,'Currywurst mit Pommes', 'Ein Gericht aus einer Wurst mit Kartoffeln als Streifen geschnitten', '2020-08-25' , 0, 0, 3, 5 );
+INSERT INTO gericht (`name`, `beschreibung`, `erfasst_am`, `vegetarisch`, `vegan`, `preis_intern`, `preis_extern`) VALUES
+    ('Currywurst mit Pommes', 'Ein Gericht aus einer Wurst mit Kartoffeln als Streifen geschnitten', '2020-08-25' , 0, 0, 3, 5 );
+
+
+DELETE FROM gericht WHERE id='24';
+
+SELECT * FROM gericht;
 
 /* AUFGABE 6 nicht fertig */
 
