@@ -66,7 +66,7 @@ function anzahlBesucher(){
         exit();
     }
 
-    $sql2 = "INSERT INTO besucher() VALUES ()";
+    $sql2 ="UPDATE besucher SET id = id + 1";
     $link->query($sql2);
 
 
