@@ -18,6 +18,7 @@ if (!$link) {
     exit();
 }
 
+//Die Funktion gibt die Anzahl der Zeilen in newsletterAnmeldung.txt zurück
 function anzahlNewsletteranmeldungen(){
     $readfile = "newsletterAnmeldungen.txt";
     $zeilen = -1;
@@ -30,6 +31,7 @@ function anzahlNewsletteranmeldungen(){
     return $zeilen;
 }
 
+//Die Funktion gibt die Anzahl der Speisen als Array aus
 function anzahlSpeisen(){
     $link=mysqli_connect(
         "127.0.0.1",
@@ -49,12 +51,10 @@ function anzahlSpeisen(){
     mysqli_free_result($result);
     mysqli_close($link);
     echo $zeile[0];
-
-
 }
 
+//Die Funktion gibt die Anzahl der Besucher als Array aus
 function anzahlBesucher(){
-
     $link=mysqli_connect(
         "127.0.0.1",
         "root",
@@ -121,8 +121,6 @@ function anzahlBesucher(){
             echo "<tr>";
             $picture = $meal['Bild'][$i];
         }
-
-
         $sqlRandom = "SELECT name, beschreibung FROM gericht ORDER BY RAND() limit 5";
         $resultsRandom = mysqli_query($link, $sqlRandom);
 
@@ -130,7 +128,6 @@ function anzahlBesucher(){
         echo "<th>5 zufällige Gerichte</th>";
         echo "<th>Beschreiung</th>";
         while($zeileRandom = mysqli_fetch_array($resultsRandom, MYSQLI_ASSOC)){
-
             echo "<tr>";
             echo "<td>".$zeileRandom['name']."</td>";
             echo "<td>".$zeileRandom['beschreibung']."</td>";
@@ -138,44 +135,30 @@ function anzahlBesucher(){
         }
         echo "</table><br>";
 
-
-        /* hier weiter machen
-        SELECT name, preis_intern, preis_extern, GROUP_CONCAT(a.code) FROM gericht g JOIN gericht_hat_allergen a ON g.id = a.gericht_id GROUP BY name ASC
-        Das ist richtig, will nur nicht ausführen!
-        */
-
         $sql ="SELECT gericht.name, preis_intern, preis_extern, code
                     FROM gericht
                     LEFT OUTER JOIN gericht_hat_allergen ON gericht.id=gericht_hat_allergen.gericht_id
                     GROUP BY name ASC
                     ORDER BY name ASC LIMIT 5;" ;
-
-
-
         $results = mysqli_query($link, $sql);
-
         if(!$results){
             die("ungültige Abfrage".mysqli_error());
         }
+
         echo '<table border="1" id="fünfgerichte">';
         echo "<th>Gericht</th> <th>Preis intern</th> <th>Preis Extern</th> <th>Allergen</th>";
         while($zeile = mysqli_fetch_array($results, MYSQLI_ASSOC)){
-
-
             echo "<tr>";
             echo "<td>".$zeile['name']."</td>";
             echo "<td>".$zeile['preis_intern']."</td>";
             echo "<td>".$zeile['preis_extern']."</td>";
             echo "<td>".$zeile['code']."</td>";
             echo "</tr>";
-
         }
         echo "</table>";
-
         echo "<h2 id ='überschriftallergen'>Folgende Allergencodes enthalten</h2>";
         $sql2 = "SELECT code, name  FROM allergen";
         $resultsAllergene = mysqli_query($link, $sql2);
-
 
         if(!$resultsAllergene){
             die("ungültige Abfrage".mysqli_error());
@@ -183,7 +166,6 @@ function anzahlBesucher(){
         echo "<table id='allergentable' border ='1'>";
         echo "<th>Code</th><th>Allergen</th> ";
         while($zeile2 = mysqli_fetch_array($resultsAllergene, MYSQLI_ASSOC)){
-
             echo "<tr>";
             echo "<td>".$zeile2['code']."</td>";
             echo "<td>".$zeile2['name']."</td>";
@@ -196,30 +178,19 @@ function anzahlBesucher(){
 
         ?>
         </table>
-
         <h2 id="zahlenanker">E Mensa in Zahlen</h2>
         <div id="kleineTabelle">
             <div id="spalte1"><?php echo anzahlBesucher() ?> Besucher</div>
-
             <div id='spalte2'><?php echo anzahlNewsletteranmeldungen() ?> Anmeldungen zum Newsletter</div>
-
-            <div id="spalte3"><?php
-                echo anzahlSpeisen(); ?> Speisen</div>
-
+            <div id="spalte3"><?php echo anzahlSpeisen(); ?> Speisen</div>
         </div>
-
         <h2 id="kontaktanker">Interesse geweckt? Wir informieren Sie!</h2>
         <div id="newslettergrid">
-
             <form method="Post" action="Webseite.php#newslettergrid">
-
                 <label for="vorname" id ="LabelVorname">Vorname</label>
                 <input type="text" id ="vorname" name="Vorname" placeholder="Max Mustermann" required>
-
                 <label for="email" id ="LabelEmail">E-Mail</label>
                 <input type="email" id="email" name="Email" placeholder="maxmustermann@gmx.de" required>
-
-
                 Newsletter bitte in:
                 <select name="Intervall">
                     <option value="1">Englisch</option>
@@ -230,7 +201,6 @@ function anzahlBesucher(){
                 <input id="Datenschutzhinweis" type="checkbox" name="Datenschutz" required>
                 <label for="Datenschutzhinweis">Den Datenschutzbestimmungen stimme ich zu &nbsp &nbsp &nbsp &nbsp</label>
                 <button type="submit" name="Button">Zum Newsletter anmelden</button><br>
-                <!-- Writer hinzufügen  -->
                 <?php include ('formdata.php') ?>
             </form>
         </div>

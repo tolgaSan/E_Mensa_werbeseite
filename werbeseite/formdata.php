@@ -6,8 +6,6 @@
 -->
 
 <?php
-//Vorverarbeitung
-
 $erfolgt = true;
 if(isset($_POST['Button'])){
     if(isset($_POST['Vorname'])){
