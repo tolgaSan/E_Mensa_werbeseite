@@ -33,7 +33,7 @@ CREATE TABLE allergen(
 CREATE TABLE Kategorie(
       id INT8 PRIMARY KEY AUTO_INCREMENT,
       name VARCHAR(80) NOT NULL,
-      eltern_id INT8,
+      eltern_id INT8 REFERENCES Kategorie(id),
       bildname VARCHAR(200)
 );
 
