@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+°J<!DOCTYPE html>
 <!--
 - Praktikum DBWT. Autoren:
 - Kenny, Rohlf, 3517996
