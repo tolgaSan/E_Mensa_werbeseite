@@ -95,7 +95,7 @@ GROUP BY kategorie_id
 ORDER BY anzahl ASC;
 SELECT DISTINCT name, GROUP_CONCAT(code) as anzahl FROM gericht g
 LEFT JOIN gericht_hat_allergen a ON g.id = a.gericht_id
-WHERE gericht_id = 4 OR gericht_id = 5
+WHERE gericht_id = 3 OR gericht_id = 4 OR gericht_id = 5
 GROUP BY name ASC;
 
 /* AUFGABE 9 */
@@ -103,7 +103,8 @@ CREATE TABLE besucher(
     id INT8 AUTO_INCREMENT PRIMARY KEY
 );
 DROP TABLE besucher;
-/*
+
+/* Initialisierung der Datenbank
 INSERT INTO besucher() VALUES ();
 
 UPDATE besucher SET id = 0;

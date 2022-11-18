@@ -66,8 +66,8 @@ function anzahlBesucher(){
         exit();
     }
 
-    $sql2 ="UPDATE besucher SET id = id + 1";
-    $link->query($sql2);
+    $sql3 ="UPDATE besucher SET id = id + 1";
+    $link->query($sql3);
 
 
     $sql = "SELECT MAX(id) FROM besucher";
@@ -135,11 +135,7 @@ function anzahlBesucher(){
         }
         echo "</table><br>";
 
-        $sql ="SELECT gericht.name, preis_intern, preis_extern, code
-                    FROM gericht
-                    LEFT OUTER JOIN gericht_hat_allergen ON gericht.id=gericht_hat_allergen.gericht_id
-                    GROUP BY name ASC
-                    ORDER BY name ASC LIMIT 5;" ;
+        $sql ="SELECT DISTINCT name, preis_intern, preis_extern, GROUP_CONCAT(code) AS code FROM gericht g LEFT JOIN gericht_hat_allergen a ON g.id = a.gericht_id GROUP BY name ASC LIMIT 5;" ;
         $results = mysqli_query($link, $sql);
         if(!$results){
             die("ungültige Abfrage".mysqli_error());
