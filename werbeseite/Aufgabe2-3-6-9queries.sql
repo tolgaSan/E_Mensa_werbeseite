@@ -109,3 +109,5 @@ INSERT INTO besucher() VALUES ();
 
 UPDATE besucher SET id = 0;
 */
+
+create table ghkg (a int, b int);

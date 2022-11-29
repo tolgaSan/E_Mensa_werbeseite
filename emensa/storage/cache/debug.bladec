@@ -1,0 +1,13 @@
+<h1>This is a blade view showing phpinfo();</h1>
+
+<!-- <pre>
+
+ @php
+ phpinfo();
+ @endphp
+
+</pre> -->
+
+<?php 
+phpinfo();
+ ?>
