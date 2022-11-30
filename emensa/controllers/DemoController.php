@@ -20,6 +20,8 @@ class DemoController
         return view('demo.demo', $vars);
     }
 
+
+
     /**
      * error action for debug purposes
      * @throws Exception
@@ -33,4 +35,5 @@ class DemoController
     public function requestdata(RequestData $rd) {
         return view('demo.requestdata', ['rd' => $rd]);
     }
+
 }

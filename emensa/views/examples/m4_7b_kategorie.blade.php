@@ -1,11 +1,11 @@
 @extends('layout')
 @section('content')
     <ul>
-        @foreach($key as $kategorie)
+        @foreach($kategorie as $key)
             @if($loop->odd)
-            <li style="font-weight:bold;">{{$kategorie->name}}</li>
+            <li style="font-weight:bold;">{{$key['name']}}</li>
             @elseif($loop->even)
-            <li>{{$kategorie->name}}</li>
+            <li>{{$key['name']}}</li>
             @endif
         @endforeach
     </ul>

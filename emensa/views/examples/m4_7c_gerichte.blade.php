@@ -1,12 +1,15 @@
-@extends('layouts')
+@extends('layout')
 @section('content')
+
+    @empty($gericht)
+        Keine Gerichte vorhanden
+    @endempty
     <ul>
-        @foreach($key as $gericht)
-            @if($gericht->preis_intern<2)
-            {{$gericht->name}}
-            @else
-            Es sind keine Gerichte vorhanden
-            @endif
+        @foreach($gericht as $key)
+            <li>
+                {{$key['name']}}
+                {{$key['preis_intern']}}
+            </li>
         @endforeach
     </ul>
 @endsection
