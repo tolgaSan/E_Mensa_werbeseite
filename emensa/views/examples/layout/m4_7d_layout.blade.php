@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html lang="de">
-
-
-    @section('title')
-        <title>Erste Seite</title>
-    @endsection
-
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>@yield('title')</title>
+</head>
+<body>
 @section('header')
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <title>Ihre E-Mensa</title>
-        <link type="text/css" rel="stylesheet" href="E_Mensa_werbeseite\werbeseite\style.css" />
-    </head>
-    <body>
     <div id="header">
         <div id="logo"><img src="img/mensa.png" alt="Mensa Logo" width="80" height="80"></div>
         <div id="menu">
@@ -26,20 +19,17 @@
         </div>
         <div id="irgendwas"> irgendwas </div>
     </div>
-    @endsection
+    @show
     @section('main')
         <div>
             <h3>Dies ist die erste Seite und das ist die Main Section</h3>
         </div>
-    @endsection
+    @show
     @section('footer')
         <div>
             <h4>Footer bereich. Hier sollte Impressum, Copryright und sonstiges stehen.</h4>
         </div>
-    @endsection
-
-
-
+    @show
 </body>
 </html>
 
