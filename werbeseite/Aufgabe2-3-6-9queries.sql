@@ -104,10 +104,13 @@ CREATE TABLE besucher(
 );
 DROP TABLE besucher;
 
-/* Initialisierung der Datenbank
-INSERT INTO besucher() VALUES ();
+/*Initialisierung der Datenbank*/
+INSERT INTO besucher() VALUES (0);
 
 UPDATE besucher SET id = 0;
+<<<<<<< Updated upstream
 */
 
 create table ghkg (a int, b int);
+=======
+>>>>>>> Stashed changes
