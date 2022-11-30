@@ -1,4 +1,4 @@
-@extends('layout.m4_7d_layout')
+@extends('examples.layout.m4_7d_layout')
 
 @section('header')
     <div>

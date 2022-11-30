@@ -34,13 +34,7 @@ class ExamplesController
     }
 
     public function m4_7d_layout(RequestData $rd){
-        $var = $rd->query['no'] ?? null;
-
-        if($var == "1") {
-            return view('examples.pages.m4_7d_page_1', []);
-        }
-        else{
-            echo "2";
-        }
+        $var = ['no' => $rd->query['no'] ?? 1];
+        return view('examples.pages.m4_7d_page_'.$var['no'], $var);
     }
 }

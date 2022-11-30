@@ -1,4 +1,4 @@
-@extends('layout.m4_7d_layout')
+@extends('examples.layout.m4_7d_layout')
 @section('header')
     <div>
         <h3>Dies ist die zweite Seite und das ist die header Section</h3>
@@ -8,7 +8,7 @@
     <div>
         <h1>Test, page 2, zweite Seite. Main section</h1>
     </div>
-@endsections
+@endsection
 @section('footer')
     <div>
         <h3>Footer, page2, section foota</h3>

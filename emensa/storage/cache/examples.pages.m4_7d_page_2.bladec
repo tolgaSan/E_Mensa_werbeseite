@@ -1,18 +1,17 @@
 <?php $_shouldextend[1]=1; ?>
-
 <?php $this->startSection('header'); ?>
  <div>
- <h3>Dies ist die erste Seite und das ist die header Section</h3>
+ <h3>Dies ist die zweite Seite und das ist die header Section</h3>
  </div>
 <?php $this->stopSection(); ?>
 <?php $this->startSection('main'); ?>
  <div>
- <h1>Test, page 1, erste Seite. Main section</h1>
+ <h1>Test, page 2, zweite Seite. Main section</h1>
  </div>
-<?php $this->stopSection(); ?>
+@endsections
 <?php $this->startSection('footer'); ?>
  <div>
- <h3>Footer, page1, section foota</h3>
+ <h3>Footer, page2, section foota</h3>
  </div>
 <?php $this->stopSection(); ?>
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('examples.layout.m4_7d_layout'); } ?>
