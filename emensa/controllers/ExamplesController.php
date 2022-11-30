@@ -1,5 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'].'/../models/kategorie.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/../models/gericht.php');
+
 
 class ExamplesController
 {
@@ -28,6 +30,18 @@ class ExamplesController
         $gericht = db_gericht_select_all();
         return view('examples.m4_7c_gerichte',[
             'gericht' => $gericht
+        ]);
+    }
+
+    public function m4_7d_layout(RequestData $rd){
+        $seite = 1;
+        if($_GET['no'] == '1'){
+            $seite = 1;
+        }else{
+            $seite = 2;
+        }
+        return view('examples.layout.m4_7d_layout',[
+
         ]);
     }
 }

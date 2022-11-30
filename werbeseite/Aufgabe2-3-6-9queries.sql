@@ -108,9 +108,4 @@ DROP TABLE besucher;
 INSERT INTO besucher() VALUES (0);
 
 UPDATE besucher SET id = 0;
-<<<<<<< Updated upstream
-*/
 
-create table ghkg (a int, b int);
-=======
->>>>>>> Stashed changes
