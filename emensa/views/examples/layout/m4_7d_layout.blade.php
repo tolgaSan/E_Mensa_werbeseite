@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
+
 
     @section('title')
         <title>Erste Seite</title>
     @endsection
-</head>
-<body>
-
-
 
 @section('header')
     <head>

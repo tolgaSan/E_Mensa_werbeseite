@@ -1,37 +1,86 @@
-<?php $_shouldextend[1]=1; ?>
-<?php $this->startSection('title'); ?>
- <title>Erste Seite</title>
-<?php $this->stopSection(); ?>
-
-<?php $this->startSection('header'); ?>
- <head>
+<!DOCTYPE html>
+<!--
+- Praktikum DBWT. Autoren:
+- Kenny, Rohlf, 3517996
+- Tolga, Sanli, 3236111
+-->
+<html lang="de">
+<head>
  <meta http-equiv="content-type" content="text/html; charset=utf-8">
- <title>Ihre E-Mensa</title>
- <link type="text/css" rel="stylesheet" href="E_Mensa_werbeseite\werbeseite\style.css" />
- </head>
- <body>
- <div id="header">
- <div id="logo"><img src="img/mensa.png" alt="Mensa Logo" width="80" height="80"></div>
- <div id="menu">
- <ul id="reitermenu">
- <li><a href ="#ankuendigunganker">Ankündigung</a></li>
- <li><a href ="#koestlichkeitenanker">Speisen</a></li>
- <li><a href ="#zahlenanker">Zahlen</a></li>
- <li><a href ="#kontaktanker">Kontakt</a></li>
- <li><a href ="#wichtigfuerunsanker">Wichtig für uns</a></li>
- </ul>
- </div>
- <div id="irgendwas"> irgendwas </div>
- </div>
-<?php $this->stopSection(); ?>
-<?php $this->startSection('main'); ?>
- <div>
- <h3>Dies ist die erste Seite und das ist die Main Section</h3>
- </div>
-<?php $this->stopSection(); ?>
-<?php $this->startSection('footer'); ?>
- <div>
- <h4>Footer bereich. Hier sollte Impressum, Copryright und sonstiges stehen.</h4>
- </div>
-<?php $this->stopSection(); ?>
-<?php if (isset($_shouldextend[1])) { echo $this->runChild('layout.m4_7d_layout'); } ?>
+ <title>Dossier von Kenny & Tolga</title>
+ <style>
+ table,th,td{border:1px solid }
+ </style>
+</head>
+<body>
+<table>
+ <thead>
+ <tr>
+ <th>Aufgabe:</th>
+ <th>geschätze Zeit</th>
+ <th>benötigte Zeit</th>
+ <th>Grund für Abweichung des Zeitplan</th>
+ <th>(Optional)gefundene/fehlgeschlagene Lösungsweg sowie Quellen</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <th>1-3)</th>
+ <th>0:15</th>
+ <th>0:10</th>
+ <th>Vorerfahrungen</th>
+ <th>Quelle für Tabelle aus de.w3docs.com</th>
+ </tr>
+ <tr>
+ <th>4)</th>
+ <th>0:10</th>
+ <th>~0:10</th>
+ <th>Vorerfahrungen</th>
+ <th>Einige Quellen aus de.w3docs.com sowie Vorlesung</th>
+ </tr>
+ <tr>
+ <th>5)</th>
+ <th>0:10</th>
+ <th>0:15</th>
+ <th>Vorerfahrungen/Vorlesung</th>
+ <th></th>
+ </tr>
+ <tr>
+ <th>6)</th>
+ <th>0:10</th>
+ <th>0:48</th>
+ <th>Zeit falsch eingeschätzt, da ich nochmal schauen musste, wo ich die HTTP Header finde</th>
+ <th>Folien der Vorlesung angeschaut</th>
+ </tr>
+ <tr>
+ <th>7)</th>
+ <th>0:05</th>
+ <th>0:10</th>
+ <th>Es musste noch kleinere Fehler behoben werden</th>
+ <th>Zur Lösung habe ich die Webseite validator.w3.org benutzt.</th>
+ </tr>
+ <tr>
+ <th>8)</th>
+ <th>0:15</th>
+ <th>0:30</th>
+ <th>Wir haben über die Aufgabenstellung zu viel philosophiert</th>
+ <th></th>
+ </tr>
+ <tr>
+ <th>9)</th>
+ <th>0:45</th>
+ <th>1:00</th>
+ <th>Müssten mehr googlen als gedacht</th>
+ <th>w3schools und etliche Forums</th>
+ </tr>
+ <tr>
+ <th>10)</th>
+ <th>1:00</th>
+ <th>~3:00</th>
+ <th>Teils komplizierter als gedacht wegen zu viele Zeilen und komische verschiebungen</th>
+ <th>w3schools und etliche Forums</th>
+ </tr>
+ </tbody>
+</table>
+</body>
+</html>
