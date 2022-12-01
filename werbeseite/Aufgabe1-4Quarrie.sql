@@ -20,12 +20,5 @@ CREATE TABLE  wunschgericht(
     Ersteller_ID INT8 REFERENCES Ersteller(ID)
 );
 
-
-IF EXISTS (SELECT name FROM Ersteller WHERE name = '$name') THEN
-INSERT INTO wunschgericht(name, Beschreibung, Erstellungsdatum, Ersteller_ID) VALUES
-('$gericht','$bsr', '$datum', (SELECT Ersteller.ID FROM Ersteller WHERE name = '$name'));
-ELSE
-INSERT INTO ersteller(Name, email) VALUES ('$name','$email');
-INSERT INTO wunschgericht(name, Beschreibung, Erstellungsdatum, Ersteller_ID) VALUES
-('$gericht', '$bsr', '$datum', (SELECT Ersteller.ID FROM Ersteller WHERE name = '$name'));
-END IF
+SELECT e.Name, e.Email, w.name, w.Beschreibung, w.Erstellungsdatum
+FROM ersteller e INNER JOIN wunschgericht w on e.ID = w.Ersteller_ID ORDER BY Erstellungsdatum DESC LIMIT 5;

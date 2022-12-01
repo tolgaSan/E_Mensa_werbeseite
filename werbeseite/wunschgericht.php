@@ -37,7 +37,7 @@
         <input type="text" name="emailInput" id ="email" required><br>
 
         <label id="erstellungsdatumLabel" for="erstellungsdatum">Erstellungsdatum* : </label><br>
-        <input type="text" name="erstellungsdatumInput" id ="erstellungsdatum" required><br><br>
+        <input type="date" name="erstellungsdatumInput" id ="erstellungsdatum" required><br><br>
 
         <Button type="submit" name ="button" id="button">Wunsch abschicken</Button><br>
 
@@ -69,13 +69,17 @@ if($isset){
     $email = $_POST['emailInput'];
     $datum = $_POST['erstellungsdatumInput'];
 
-    $sql = "IF EXISTS (SELECT name FROM Erstellerin WHERE name = '$name') THEN
-            INSERT INTO wunschgericht(name, Beschreibung, Erstellungsdatum, Erstellerin_ID) VALUES
-            ('$gericht','$bsr', '$datum', (SELECT Erstellerin.ID FROM Erstellerin WHERE name = '$name'));
+    if($name == ""){
+        $name = "anonym";
+    }
+
+    $sql = "IF EXISTS (SELECT name FROM Ersteller WHERE name = '$name') THEN
+            INSERT INTO wunschgericht(name, Beschreibung, Erstellungsdatum, Ersteller_ID) VALUES
+            ('$gericht','$bsr', '$datum', (SELECT Ersteller.ID FROM Ersteller WHERE name = '$name'));
             ELSE
-            INSERT INTO erstellerin(Name, email) VALUES ('$name','$email');
-            INSERT INTO wunschgericht(name, Beschreibung, Erstellungsdatum, Erstellerin_ID) VALUES
-            ('$gericht', '$bsr', '$datum', (SELECT Erstellerin.ID FROM Erstellerin WHERE name = '$name'));
+            INSERT INTO ersteller(Name, email) VALUES ('$name','$email');
+            INSERT INTO wunschgericht(name, Beschreibung, Erstellungsdatum, Ersteller_ID) VALUES
+            ('$gericht', '$bsr', '$datum', (SELECT Ersteller.ID FROM Ersteller WHERE name = '$name'));
             END IF
             ";
 
