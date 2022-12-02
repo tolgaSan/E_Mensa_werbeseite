@@ -38,10 +38,12 @@
                 @foreach($gericht as $key)
                     <tr>
                         <td>{{$key['name']}}</td>
-                        <td>{{number_format($key['preis_intern'],2)}}</td>
-                        <td>{{number_format($key['preis_extern'],2)}}</td>
+                        <td>{{number_format($key['preis_intern'],2)}}€</td>
+                        <td>{{number_format($key['preis_extern'],2)}}€</td>
                         @if(isset($key['code']))
                         <td>{{$key['code']}}</td>
+                        @else
+                            <td></td>
                         @endif
                     </tr>
                 @endforeach
