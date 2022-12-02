@@ -28,8 +28,8 @@ function db_gericht_select_all() {
 function db_gericht_preisintern_preisextern_allergen(){
     $link = connectdb();
     $sql = "SELECT DISTINCT name, preis_intern, preis_extern, GROUP_CONCAT(code) AS code FROM gericht g 
-            LEFT JOIN gericht_hat_allergen a ON g.id = a.gericht_id 
-            GROUP BY name ASC LIMIT 5";
+            LEFT JOIN gericht_hat_allergen a ON g.id = a.gericht_id WHERE Preis_intern > 2 
+            GROUP BY name DESC LIMIT 5";
     $result = mysqli_query($link, $sql);
     $data = mysqli_fetch_all($result, MYSQLI_BOTH);
 
