@@ -2,14 +2,25 @@
 @section('content')
 
     @empty($gericht)
-        Keine Gerichte vorhanden
+        Keine Gerichte vorhanden!
     @endempty
-    <ul>
+    <table>
+        <thead>
+        <tr>
+            <th>Gericht: </th>
+            <th>Preis_Intern:</th>
+        </tr>
+        </thead>
+        <tbody>
+
         @foreach($gericht as $key)
-            <li>
-                {{$key['name']}}
-                {{$key['preis_intern']}}
-            </li>
+            <tr>
+                <td>{{$key['name']}}</td>
+                <td>{{$key['preis_intern']}}</td>
+            </tr>
         @endforeach
-    </ul>
+
+        </tbody>
+
+    </table>
 @endsection

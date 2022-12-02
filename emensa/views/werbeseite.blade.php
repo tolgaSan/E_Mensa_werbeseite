@@ -4,10 +4,11 @@
 @endsection
 @section('content')
     <div>
-        <img src="./img/Mensa.jpg" width="50%">
-        <h2 id="ankuendigunganker">Bald gibt es Essen auch online ;)</h2>
-        <div>
-            <p>
+        <link href ="../public/css/style.css" rel="stylesheet">
+        <div id="box">
+            <img  id="imageEssen" src="./img/Mensa.jpg">
+            <h2 id="ankuendigunganker">Bald gibt es Essen auch online ;)</h2>
+            <p class="pborder">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna
                 aliqua. Quis hendrerit dolor magna eget est lorem. Condimentum
@@ -26,7 +27,7 @@
                 eget lorem dolor. Feugiat vivamus at augue eget arcu dictum.
             </p>
             <h2 id="koestlichkeitenanker">Köstlichkeiten, die Sie erwarten</h2>
-            <table>
+            <table id="GerichtAllergen" border ="1">
                 <thead>
                     <th>Gericht</th>
                     <th>Preis intern</th>
@@ -46,8 +47,8 @@
                 @endforeach
                 </tbody>
             </table>
-            <h3>Folgende Allergencodes enthalten:</h3>
-            <table>
+            <h3 id="AllergenCodes">Folgende Allergencodes enthalten:</h3>
+            <table id ="GerichtAllergen" border ="1">
                 <thead>
                 <tr>
                     <td>Code</td>
@@ -63,6 +64,13 @@
                 @endforeach
                 </tbody>
             </table>
+            <h2 id="wichtiganker">Das ist uns wichtig</h2>
+            <ul id="wichtig">
+                <li>Beste frische saisonale Zutaten</li>
+                <li>Ausgewogene abwechslungsreiche Gerichte</li>
+                <li>Sauberkeit</li>
+            </ul>
+            <h3>Wir freuen uns auf Ihren Besuch!</h3>
         </div>
     </div>
 @endsection

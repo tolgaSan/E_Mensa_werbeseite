@@ -276,4 +276,3 @@ function view($viewname, $viewargs = array())
 
     return $blade->run($viewname, $viewargs);
 }
-

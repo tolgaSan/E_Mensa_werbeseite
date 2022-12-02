@@ -23,6 +23,7 @@
     @yield('content')
 </div>
 </body>
+<hr>
 <footer id="footercenter">
     <ul>
         <li>&copy;E-Mensa GmbH</li>

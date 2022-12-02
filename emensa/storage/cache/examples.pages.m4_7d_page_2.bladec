@@ -8,7 +8,7 @@
  <div>
  <h1>Test, page 2, zweite Seite. Main section</h1>
  </div>
-@endsections
+<?php $this->stopSection(); ?>
 <?php $this->startSection('footer'); ?>
  <div>
  <h3>Footer, page2, section foota</h3>
