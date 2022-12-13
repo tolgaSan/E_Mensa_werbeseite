@@ -1,0 +1,6 @@
+{
+  "require": {
+    "eftec/bladeone": "^4.1",
+    "ext-mysqli": "*"
+  }
+}

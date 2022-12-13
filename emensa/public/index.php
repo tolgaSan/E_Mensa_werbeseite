@@ -91,7 +91,7 @@ class FrontController
 
     public static function handleRequest($url, $method = 'GET', $verbosity = 0, $configPath = CONFIG_WEBROUTES)
     {
-
+        session_start();
         if (!class_exists('eftec\bladeone\BladeOne'))
             // #ERROR
             FrontController::showErrorMessage("
