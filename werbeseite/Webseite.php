@@ -1,4 +1,4 @@
-°J<!DOCTYPE html>
+<!DOCTYPE html>
 <!--
 - Praktikum DBWT. Autoren:
 - Kenny, Rohlf, 3517996
@@ -200,6 +200,7 @@ function anzahlBesucher(){
                 <?php include ('formdata.php') ?>
             </form>
         </div>
+        <a href="wunschgericht.php">Haben sie noch einen Wunsch offen? Benutzen sie unser Formular!</a>
 
         <h2 id="wichtigfuerunsanker">Das ist uns wichtig</h2>
         <ul id="wichtig">

@@ -6,12 +6,6 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/../models/gericht.php');
 class ExamplesController
 {
     public function m4_7a_queryparameter(RequestData $rd) {
-        /*
-           Wenn Sie hier landen:
-           bearbeiten Sie diese Action,
-           so dass Sie die Aufgabe löst
-        */
-
         return view('examples.m4_7a_queryparameter', [
             'request'=>$rd,
             'name' => 'Tolga',
@@ -27,7 +21,7 @@ class ExamplesController
     }
 
     public function m4_7c_gerichte(RequestData $rd){
-        $gericht = db_gericht_select_all();
+        $gericht = db_gericht_preisintern_preisextern();
         return view('examples.m4_7c_gerichte',[
             'gericht' => $gericht
         ]);

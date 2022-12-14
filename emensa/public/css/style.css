@@ -1,5 +1,6 @@
 
 *{font-family: Cambria;}
+
 #header{
     display:grid;
     grid-template-columns: 350px auto 350px;
@@ -20,56 +21,31 @@
     gap: 10px;
     margin: 10px;
 }
-#linkeSpalte{
-    height: 1500px;}
-#content{
+#imageEssen{
+    grid-column-start: 2;
+    width: 100%;
+}
 
-}
-#rechteSpalte{
-    height: 1500px;}
-
-#kleineTabelle{
-    display: grid;
-    grid-template-columns: 300px 300px 300px;
-    margin-left: 50px;
-}
-#spalte3{
-    position: relative;
-    left: 45%;
-}
 #image{
     width: auto;
     height: 300px;
 }
 h2{
+    grid-column-start: 2;
     font-weight: bold;
     font-size: 25px;
 
 }
 h3{
+    grid-column-start: 2;
     font-weight: bold;
     font-size: 25px;
     text-align: center;
 }
 .pborder{
+    grid-column-start: 2;
     border: 2px solid black;
     padding: 5px;
-}
-#Speisen thead th{
-    border: 2px solid black;
-}
-#Speisen{
-    width: 100%;
-}
-#Speisen td{
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
-    text-align: center;
-}
-#newslettergrid{
-    display:grid;
-    grid-template-columns: auto auto auto;
 }
 
 footer ul{
@@ -86,11 +62,11 @@ footer ul li{
     padding-left: 10px;
 }
 #footercenter{
-    border-top: 2px solid black;
     text-align: center;
+    margin-left:30%;
 }
 #wichtig{
-
+    grid-column-start: 2;
     padding-left: 300px;
     text-align: left;
 }
@@ -117,64 +93,42 @@ footer ul li{
     display: inline;
 
 }
-#LabelVorname{
-    position:relative;
-    top :-20px;
-    left: 4px;
-}
-#vorname {
-    position: relative;
-    left: -60px;
-}
-#LabelEmail{
-    position: relative;
-    top: -20px;
-}
-#email{
-    position: relative;
-    left : -50px;
-}
-#DatenbankTable{
-    width: 100%;
-    text-align: center;
-    height: 7%;
-}
 #Essen{
     text-align: left;
 }
 #GerichtAllergen{
+    grid-column-start: 2;
     position: relative;
-    left:25%;
-    width: 50%;
+    width: 70%;
+    left:15%;
 }
 #AllergenÜberschrift{
     position: relative;
     left: 30%;
 }
-#zahlenanker{
-    position: relative;
-    left: 40%;
-}
+
 #koestlichkeitenanker{
-    position: relative;
-    left: 30%;
+    grid-column-start: 2;
+    text-align: center;
+    font-size: 22px;
 }
-#randomgerichte{
-    position: relative;
-    left:20%;
-    width:60%;
+#wichtiganker{
+    grid-column-start: 2;
+    font-size : 22px;
+    margin-left: 20%;
 }
-#fünfgerichte{
-    position: relative;
-    left: 20%;
-    width: 60%;
+#wichtig{
+    grid-column-start: 2;
+    font-size:16px;
+    margin-left:20%;
 }
-#allergentable{
-    position: relative;
-    left:20%;
-    width:60%;
+#ankuendigunganker{
+    grid-column-start: 2;
+    text-align: center;
+    font-size: 24px;
 }
-#überschriftallergen{
-    position: relative;
-    left:30%;
+#AllergenCodes{
+    grid-column-start: 2;
+    text-align: center;
+    font-size:22px;
 }
