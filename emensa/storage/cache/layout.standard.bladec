@@ -17,7 +17,7 @@
  <li><a href ="#wichtigfuerunsanker">Wichtig für uns</a></li>
  </ul>
  </div>
- <div id="irgendwas"> Rechter spalten </div>
+ <div id="irgendwas"> <a href="/anmeldung">Anmeldung </a></div>
 </div>
 <div>
  <?php echo $this->yieldContent('content'); ?>

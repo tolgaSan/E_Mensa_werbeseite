@@ -4,6 +4,7 @@ require_once('../models/gericht.php');
 require_once('../models/kategorie.php');
 require_once('../models/allergen.php');
 
+
 class WerbeseiteController{
     public function werbeseite(RequestData $rd){
         $gericht = db_gericht_select_all();
