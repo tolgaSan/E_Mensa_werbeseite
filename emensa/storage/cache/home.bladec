@@ -11,7 +11,7 @@
  <ul>
  <li><a href="/demo/demo">Demo</a></li>
  <li><a href="/demo/dbconnect">Datenbank: Gerichte</a></li>
- <li><a href="/examples/m4_7a_queryparameter">m4_7a_queryparameter</a></li>
+ <li><a href="/werbeseite">Werbeseite</a></li>
  </ul>
  <ul>
  <li><a href="/debug"><code class="language-php">phpinfo();</code></a></li>
