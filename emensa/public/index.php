@@ -86,6 +86,10 @@ class RequestData
     }
 }
 
+    use Monolog\Level;
+    use Monolog\Logger;
+    use Monolog\Handler\StreamHandler;
+
 class FrontController
 {
 
@@ -275,4 +279,15 @@ function view($viewname, $viewargs = array())
     $blade = new BladeOne($views, $cache, BladeOne::MODE_DEBUG);
 
     return $blade->run($viewname, $viewargs);
+}
+
+function logger(){
+    $log = new Logger('name');
+    $log->pushHandler(new StreamHandler('./storage/logs/log.txt', Level::Warning));
+
+// add records to the log
+    $log->warning('Foo');
+    $log->error('Bar');
+
+    //Mehr Information in der Vorlesung 20. Muss ich noch etwas genauer durchgehen.
 }

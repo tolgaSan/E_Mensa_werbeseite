@@ -29,6 +29,7 @@
             <h2 id="koestlichkeitenanker">Köstlichkeiten, die Sie erwarten</h2>
             <table id="GerichtAllergen" border ="1">
                 <thead>
+                    <th>Bild</th>
                     <th>Gericht</th>
                     <th>Preis intern</th>
                     <th>Preis extern</th>
@@ -37,6 +38,7 @@
                 <tbody>
                 @foreach($gericht as $key)
                     <tr>
+                        <td><img id="Bild" src="./img/gerichte/{{$key['bildname']}}"></td>
                         <td>{{$key['name']}}</td>
                         <td>{{number_format($key['preis_intern'],2)}}€</td>
                         <td>{{number_format($key['preis_extern'],2)}}€</td>
