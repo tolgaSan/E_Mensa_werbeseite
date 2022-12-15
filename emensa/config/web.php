@@ -20,9 +20,10 @@ return array(
     '/m4_7c_gerichte' => 'ExamplesController@m4_7c_gerichte',
     '/m4_7d_layout' => 'ExamplesController@m4_7d_layout',
 
-    '/werbeseite' => 'WerbeseiteController@werbeseite'
+    '/werbeseite' => 'WerbeseiteController@werbeseite',
 
-
+    '/anmeldung' => 'AnmeldungController@anmeldung',
+    '/anmeldung_verifizieren' => 'AnmeldungController@anmeldung_verifizieren'
 
 
 );
