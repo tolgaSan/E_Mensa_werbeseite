@@ -1,6 +1,7 @@
 <?php
 
-include 'C:\Users\TolgaSanli\PhpstormProjects\E_Mensa_werbeseite\beispiele\password.php';
+//include 'C:\Users\TolgaSanli\PhpstormProjects\E_Mensa_werbeseite\beispiele\password.php';
+include 'C:\Users\KVRoh\Repositories\E_Mensa_werbeseite\beispiele\password.php';
 
 function db_user_einfuegen($user,$password){
 
@@ -24,28 +25,29 @@ function db_user_einfuegen($user,$password){
 }
 
 
-function db_user_suchen($user, $password){
+function db_user_suchen($user, $password)
+{
 
     $link = connectdb();
     mysqli_begin_transaction($link);
     $passwordmres = mysqli_real_escape_string($link, $password);
-
     $usermres = mysqli_real_escape_string($link, $user);
+
     $salt = "dbwt";
-    $passwordHashed = mysqli_real_escape_string($link, passwordHashen($salt.$password));
+    $passwordHashed = passwordHashen($salt . $password);
 
-    $sql = "SELECT email, passwort FROM benutzer WHERE email = '$user' AND passwort = '$passwordHashed'";
+    $sql = "SELECT EXISTS (SELECT email, passwort FROM benutzer WHERE email = '$usermres' AND passwort = '$passwordHashed')";
 
-    $result = mysqli_query($link, $sql);
+    $result = mysqli_query($link, $sql)->fetch_array();
+
     mysqli_commit($link);
     mysqli_close($link);
 
-    if(mysqli_num_rows($result)== 0){
-        echo $passwordHashed;
-    }else{
-        return true;
+    if ($result[0] == 1) {
+        header("Location: /werbeseite");
+    } else {
+        header("Location: /werbeseite");
     }
-
 }
 
 function db_anmeldung_anzahlanmeldungen($user){
