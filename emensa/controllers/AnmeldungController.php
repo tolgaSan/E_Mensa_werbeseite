@@ -1,6 +1,7 @@
 <?php
 
 require_once ($_SERVER['DOCUMENT_ROOT'].'/../models/anmeldung.php');
+require_once ($_SERVER['DOCUMENT_ROOT'].'/../models/password.php');
 
 class AnmeldungController{
 
@@ -13,24 +14,42 @@ class AnmeldungController{
     }
     public function anmeldung_verifizieren(RequestData $rd){
 
+        $link = connectdb();
+        mysqli_begin_transaction($link);
         $userlogin = $rd->query['email'] ?? false;
-        $password = $rd->query['passwort'] ?? false;
+        $password = $rd->query['password'] ?? false;
         if(isset($_POST['sent'])){
             $userlogin = $_POST['email'];
-            $password = $_POST['passwort'];
+            $password = $_POST['password'];
         }
+        $_SESSION['email'] = $_POST['email'];
         //db suche
-        $find = db_user_suchen($userlogin, $password);
+        $find = db_user_suchen($userlogin, passwordHashen($password));
+        $orgemdwas = mysqli_fetch_all($find, MYSQLI_ASSOC);
         $_SESSION['login_result_message'] = null;
-        if($find){
-            $_SESSION['login_ok'] = true;
-            db_anmeldung_anzahlanmeldungen($userlogin);
-            $_SESSION['login_result_message'] = 'Profil: '.$userlogin;
-            $target = 'werbeseite';
-            header('Location: /werbeseite');
-        }else{
-            $_SESSION['login_result_message'] = 'Benutzer oder Passwort falsch. Bitte erneut eingeben';
-            header('Location: /anmeldung');
+        if($find != null){
+            if(count($orgemdwas) != 0){
+                $_SESSION['login_ok'] = true;
+                //db_anmeldung_anzahlanmeldungen($userlogin);
+                $ersteId = $orgemdwas[0]['id'];
+                mysqli_query($link, "call inkrementAnmeldung('$ersteId')");
+                mysqli_query($link,"update benutzer set letzteanmeldung = now(),anzahlfehler = 0 where email = '$userlogin'");
+                $_SESSION['login_result_message'] = 'Profil: '.$userlogin;
+                $target = 'werbeseite';
+                header('Location: /werbeseite');
+            }else{
+                $_SESSION['login_result_message'] = 'Fehlerhaft. Bitte erneut eingeben';
+
+                mysqli_query($link,"update benutzer set anzahlfehler = anzahlfehler + 1, letzterfehler = now() where email = '$userlogin'");
+                mysqli_commit($link);
+
+                header('Location: /anmeldung');
+            }
         }
+    }
+
+    public function abmeldung(){
+        $_SESSION['login_ok'] = false;
+        header('Location: /werbeseite');
     }
 }

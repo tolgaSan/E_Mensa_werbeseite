@@ -1,5 +1,5 @@
 /* Aufgabe 2 */
-/* ALTER TABLE gericht ADD bildname VARCHAR(200) DEFAULT NULL; */
+ALTER TABLE gericht ADD bildname VARCHAR(200) DEFAULT NULL;
 
 UPDATE gericht set gericht.bildname = '01_bratkartoffel.jpg' WHERE ID = 1;
 UPDATE gericht set gericht.bildname = '03_bratkartoffel.jpg' WHERE ID = 3;
@@ -14,3 +14,5 @@ UPDATE gericht set gericht.bildname = '15_pilze.jpg' WHERE ID = 15;
 UPDATE gericht set gericht.bildname = '17_broetchen.jpg' WHERE ID = 17;
 UPDATE gericht set gericht.bildname = '19_mousse.jpg' WHERE ID = 19;
 UPDATE gericht set gericht.bildname = '20_suppe.jpg' WHERE ID = 20;
+
+UPDATE benutzer set benutzer.name = 'Okay' WHERE ID = 1;

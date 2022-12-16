@@ -1,7 +1,7 @@
 <?php
 
 //include 'C:\Users\TolgaSanli\PhpstormProjects\E_Mensa_werbeseite\beispiele\password.php';
-include 'C:\Users\KVRoh\Repositories\E_Mensa_werbeseite\beispiele\password.php';
+require_once ($_SERVER['DOCUMENT_ROOT'].'/../models/password.php');
 
 function db_user_einfuegen($user,$password){
 
@@ -33,21 +33,14 @@ function db_user_suchen($user, $password)
     $passwordmres = mysqli_real_escape_string($link, $password);
     $usermres = mysqli_real_escape_string($link, $user);
 
-    $salt = "dbwt";
-    $passwordHashed = passwordHashen($salt . $password);
+    $sql = "SELECT id FROM benutzer WHERE email = '$usermres' AND passwort = '$passwordmres'";
 
-    $sql = "SELECT EXISTS (SELECT email, passwort FROM benutzer WHERE email = '$usermres' AND passwort = '$passwordHashed')";
-
-    $result = mysqli_query($link, $sql)->fetch_array();
+    $result = mysqli_query($link, $sql);
 
     mysqli_commit($link);
     mysqli_close($link);
 
-    if ($result[0] == 1) {
-        header("Location: /werbeseite");
-    } else {
-        header("Location: /werbeseite");
-    }
+    return $result;
 }
 
 function db_anmeldung_anzahlanmeldungen($user){

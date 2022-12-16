@@ -23,7 +23,8 @@ return array(
     '/werbeseite' => 'WerbeseiteController@werbeseite',
 
     '/anmeldung' => 'AnmeldungController@anmeldung',
-    '/anmeldung_verifizieren' => 'AnmeldungController@anmeldung_verifizieren'
+    '/anmeldung_verifizieren' => 'AnmeldungController@anmeldung_verifizieren',
+    '/abmeldung' => 'AnmeldungController@abmeldung'
 
 
 );
