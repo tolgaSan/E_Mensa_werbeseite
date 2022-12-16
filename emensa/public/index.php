@@ -4,6 +4,11 @@ const PUBLIC_DIRNAME = "public";
 const CONFIG_WEBROUTES = "/../config/web.php";
 const CONFIG_DB = "/../config/db.php";
 
+
+    use Monolog\Logger;
+    use Monolog\Handler\StreamHandler;
+    use Monolog\Formatter\LineFormatter;
+
 // DEMO
 try {
     if (!file_exists(realpath($_SERVER['DOCUMENT_ROOT'] . "/../vendor/autoload.php"))) {
@@ -86,12 +91,14 @@ class RequestData
     }
 }
 
-    use Monolog\Level;
-    use Monolog\Logger;
-    use Monolog\Handler\StreamHandler;
-
 class FrontController
 {
+
+    public static function logger() : object{
+        $log = new Logger('Werbeseite');
+        $log->pushHandler(new StreamHandler('storage/logs/file.log', Logger::INFO));
+        return $log;
+    }
 
     public static function handleRequest($url, $method = 'GET', $verbosity = 0, $configPath = CONFIG_WEBROUTES)
     {
@@ -282,13 +289,6 @@ function view($viewname, $viewargs = array())
     return $blade->run($viewname, $viewargs);
 }
 
-function logger(){
-    $log = new Logger('name');
-    $log->pushHandler(new StreamHandler('./storage/logs/log.txt', Level::Warning));
-
-// add records to the log
-    $log->warning('Foo');
-    $log->error('Bar');
-
-    //Mehr Information in der Vorlesung 20. Muss ich noch etwas genauer durchgehen.
+function getlogger() : void {
+    FrontController::logger();
 }

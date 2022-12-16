@@ -42,39 +42,4 @@ function db_user_suchen($user, $password)
 
     return $result;
 }
-
-function db_anmeldung_anzahlanmeldungen($user){
-    $link = connectdb();
-
-    mysqli_begin_transaction($link);
-
-    $sql = "SELECT email FROM benutzer WHERE email = '$user'";
-
-    $result = mysqli_query($link, $sql);
-
-    $date = date("d-M-Y H:i");
-
-    $sql2 = "UPDATE benutzer SET anzahlanmeldungen = anzahlanmeldungen+1 WHERE email = '$user'";
-    $sql3 = "UPDATE benutzer SET letzteanmeldung = '$date' WHERE email = '$user'";
-
-    $result2 = mysqli_query($link, $sql2);
-    $result3 = mysqli_query($link, $sql3);
-
-    mysqli_free_result($result);
-    mysqli_commit($link);
-    mysqli_close($link);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>

@@ -17,15 +17,19 @@
             <li><a href ="#wichtigfuerunsanker">Wichtig für uns</a></li>
         </ul>
     </div>
-    <div id="irgendwas"><a href="/anmeldung">
+    <div id="irgendwas">
             <?php
-            if($_SESSION['login_ok'] == false){
-                echo "Anmelden diggi";
-            }else{
-                foreach($name as $nam) echo $nam['name']."<br><br>";
-                echo "<a href='/abmeldung'> Abmelden/Signout </a>" ;
+                if(isset($_SESSION['login_ok'])){
 
-            }
+                    if($_SESSION['login_ok'] == false){
+                        echo "<a href='anmeldung' id='Anmeldung'>Anmelden</a>";
+                    }else{
+                        foreach($name as $nam) echo "Account : ".$nam['name']."<br><br>";
+                        echo "<a href='/abmeldung' id='Anmeldung'> Abmelden/Signout </a>" ;
+
+                    }
+                }
+                else echo "Anmelden</a>";
             ?>
 
     </div>

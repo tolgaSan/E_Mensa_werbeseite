@@ -1,0 +1,7 @@
+{
+  "require": {
+    "monolog/monolog": "^3.2",
+    "eftec/bladeone": "^4.1",
+    "ext-mysql": "*"
+  }
+}

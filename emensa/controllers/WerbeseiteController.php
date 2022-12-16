@@ -4,11 +4,11 @@ require_once('../models/gericht.php');
 require_once('../models/kategorie.php');
 require_once('../models/allergen.php');
 
+
 class WerbeseiteController{
     public function werbeseite(RequestData $rd){
         $link = connectdb();
 
-        $gericht = db_gericht_select_all();
         $allergen = db_allergen_select_all();
         $tabelle = db_gericht_preisintern_preisextern_allergen_werbeseite();
         $name = "";
@@ -19,6 +19,8 @@ class WerbeseiteController{
             $name = mysqli_query($link, $sql);
         }
 
+        $log = FrontController::logger();
+        $log->info("Es wurde auf die Webseite zugegriffen!");
 
         return view('werbeseite', [
             'gericht' => $tabelle,

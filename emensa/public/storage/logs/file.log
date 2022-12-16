@@ -1,0 +1,7 @@
+[2022-12-16T16:06:57.020062+00:00] Werbeseite.INFO: Anmeldung! : admin@emensa.example [] []
+[2022-12-16T16:06:57.055187+00:00] Werbeseite.INFO: Es wurde auf die Webseite zugegriffen! [] []
+[2022-12-16T16:07:03.504134+00:00] Werbeseite.INFO: Es wurde sich abgemeldet! [] []
+[2022-12-16T16:07:03.518283+00:00] Werbeseite.INFO: Es wurde auf die Webseite zugegriffen! [] []
+[2022-12-16T16:07:07.644652+00:00] Werbeseite.WARNING: Anmeldung fehlgeschlagen! [] []
+[2022-12-16T16:07:10.682271+00:00] Werbeseite.INFO: Anmeldung! : admin@emensa.example [] []
+[2022-12-16T16:07:10.730009+00:00] Werbeseite.INFO: Es wurde auf die Webseite zugegriffen! [] []
