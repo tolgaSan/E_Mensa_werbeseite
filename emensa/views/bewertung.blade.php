@@ -13,10 +13,10 @@
 
 <body>
 <div>
-    <h3>Geben sie ihre Bewertung ab!</h3>
+    <h3>{{$gericht}}
 </div>
 
-<form action="/anmeldung_verifizieren" method="post">
+<form action="/bewertung" method="post">
     <fieldset id="Feld">
         <label for="email">E-Mail Adresse</label><br>
         <input type="email" id="email" name="email" required>
