@@ -140,3 +140,12 @@ footer ul li{
 #Anmeldung{
     font-size: 20px;
 }
+#Bewertung{
+    font-size: 20px;
+    grid-column-start: 2;
+    text-align: center;
+}
+#BewertungText{
+    font-size: 11px;
+    text-align: center;
+}

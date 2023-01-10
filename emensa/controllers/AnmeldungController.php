@@ -8,8 +8,6 @@ class AnmeldungController{
     public function anmeldung(RequestData $rd){
         $msg = $_SESSION['login_result_message'] ?? null;
 
-        //db_user_einfuegen("admin@emensa.example", "123");
-
         return view('anmeldung', ['msg' => $msg]);
     }
     public function anmeldung_verifizieren(RequestData $rd){

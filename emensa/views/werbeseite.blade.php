@@ -4,6 +4,7 @@
 @endsection
 @section('content')
     <div>
+
         <link href ="../public/css/style.css" rel="stylesheet">
         <div id="box">
             <img  id="imageEssen" src="./img/Mensa.jpg">
@@ -48,6 +49,11 @@
                             <td></td>
                         @endif
                     </tr>
+                    @if(isset($_SESSION['login_ok']) && $_SESSION['login_ok'])
+                        <tr aria-rowspan="5">
+                            <td colspan="5"><a href="/bewertung?id={{$key['$id']}}" id="BewertungText">Bewerten sie das Gericht!</a></td>
+                        </tr>
+                    @endif
                 @endforeach
                 </tbody>
             </table>
@@ -68,6 +74,7 @@
                 @endforeach
                 </tbody>
             </table>
+
             <h2 id="wichtiganker">Das ist uns wichtig</h2>
             <ul id="wichtig">
                 <li>Beste frische saisonale Zutaten</li>

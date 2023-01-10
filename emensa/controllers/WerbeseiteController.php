@@ -11,6 +11,7 @@ class WerbeseiteController{
 
         $allergen = db_allergen_select_all();
         $tabelle = db_gericht_preisintern_preisextern_allergen_werbeseite();
+        $tabelleID = "SELECT id FROM gericht";
         $name = "";
         if(isset($_SESSION['email'])){
             $email = $_SESSION['email'];
@@ -23,6 +24,7 @@ class WerbeseiteController{
         $log->info("Es wurde auf die Webseite zugegriffen!");
 
         return view('werbeseite', [
+            'id' => $tabelleID,
             'gericht' => $tabelle,
             'preis_intern' => $tabelle,
             'preis_extern' => $tabelle,

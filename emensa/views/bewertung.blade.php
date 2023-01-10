@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<head>
+
+    <meta charset="utf-8">
+    <!-- style css und so -->
+    <style>
+        #Feld{
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <h3>Geben sie ihre Bewertung ab!</h3>
+</div>
+
+<form action="/anmeldung_verifizieren" method="post">
+    <fieldset id="Feld">
+        <label for="email">E-Mail Adresse</label><br>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="password">Passwort</label><br>
+        <input type="password" id="password" name="password" required>
+        <input type="submit" name="sent" value="Anmelden/Sign in">
+    </fieldset>
+</form>
+
+</body>
