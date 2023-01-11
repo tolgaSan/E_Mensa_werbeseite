@@ -21,7 +21,11 @@ return array(
     '/m4_7d_layout' => 'ExamplesController@m4_7d_layout',
 
     '/werbeseite' => 'WerbeseiteController@werbeseite',
+
     '/bewertung ' => 'BewertungController@bewertung',
+    '/bewertungAbschicken' => 'BewertungController@bewertungAbschicken',
+
+    '/bewertungen' => 'BewertungenController@index',
 
     '/anmeldung' => 'AnmeldungController@anmeldung',
     '/anmeldung_verifizieren' => 'AnmeldungController@anmeldung_verifizieren',

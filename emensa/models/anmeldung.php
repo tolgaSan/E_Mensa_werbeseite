@@ -42,4 +42,19 @@ function db_user_suchen($user, $password)
 
     return $result;
 }
+    function db_Username_from_Login($user, $password)
+    {
+
+        $link = connectdb();
+        mysqli_begin_transaction($link);
+        $passwordmres = mysqli_real_escape_string($link, $password);
+        $usermres = mysqli_real_escape_string($link, $user);
+
+        $sql = "SELECT name FROM benutzer WHERE email = '$usermres' AND passwort = '$passwordmres'";
+
+        $result = mysqli_query($link, $sql)->fetch_array();
+        mysqli_close($link);
+
+        return $result[0];
+    }
 ?>

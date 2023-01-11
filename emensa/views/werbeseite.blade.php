@@ -57,6 +57,7 @@
                 @endforeach
                 </tbody>
             </table>
+            <a href="/bewertungen" id="Bewertungen">Sehen sie sich unsere letzten Bewertungen an!</a>
             <h3 id="AllergenCodes">Folgende Allergencodes enthalten:</h3>
             <table id ="GerichtAllergen" border ="1">
                 <thead>

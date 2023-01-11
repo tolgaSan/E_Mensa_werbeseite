@@ -1,6 +1,4 @@
 
-*{font-family: Cambria;}
-
 #header{
     display:grid;
     grid-template-columns: 350px auto 350px;
@@ -153,4 +151,7 @@ footer ul li{
     font-size: 14px;
     grid-column-start: 2;
     text-align: center;
+}
+#BewertungListe {
+    grid-column-start: 2;
 }

@@ -44,6 +44,7 @@ class AnmeldungController{
 
                 mysqli_query($link,"update benutzer set letzteanmeldung = NOW(),anzahlfehler = 0 WHERE email = '$userlogin'");
                 $_SESSION['login_result_message'] = Null;
+                $_SESSION['name'] = db_Username_from_Login($userlogin , passwordHashen($password));
                 mysqli_commit($link);
 
                 $log = FrontController::logger();
