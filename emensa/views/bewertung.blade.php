@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <!-- style css und so -->
     <style>
+        #field{
+            width: 350px;
+        }
     </style>
 </head>
 
@@ -14,14 +17,18 @@
 </div>
 
 <form action ="/bewertung" method="POST">
-    <fieldset>
+    <fieldset id="field">
         <legend>{{$gericht}}</legend>
-        <select>
-            <option selected name ="option" value="Sehr gut!">Sehr gut</option>
-            <option value="Gut!">Gut</option>
-            <option value="Okay">Okay</option>
+        <label for="selection">Wie hat ihr das Gericht geschmeckt?</label><br>
+        <select name="selection" id="selection">
+            <option selected name ="option" value="Sehr gut">Sehr gut</option>
+            <option value="Gut">Gut</option>
             <option value="Schlecht">Schlecht</option>
-        </select>
+            <option value="Sehr schlecht">Sehr schlecht</option>
+        </select><br><br>
+        <label for="Bemerkung">Haben sie noch irgendwelche Bemerkungen?</label><br>
+        <textarea name ="Bemerkung" id="Bemerkung"></textarea>
+        <input type="hidden" name ="GerichtID" value=/"<?php echo $_GET['id']; ?>/"><br><br>
         <button type="submit">Abschicken!</button>
     </fieldset>
 </form>
