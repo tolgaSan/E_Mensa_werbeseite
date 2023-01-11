@@ -37,7 +37,7 @@ function db_gericht_select_all() {
 
 function db_gericht_preisintern_preisextern_allergen_werbeseite(){
     $link = connectdb();
-    $sql = "SELECT DISTINCT IFNULL(bildname,'00_image_missing.jpg') AS bildname, name, preis_intern, preis_extern,
+    $sql = "SELECT DISTINCT id ,IFNULL(bildname,'00_image_missing.jpg') AS bildname, name, preis_intern, preis_extern,
             GROUP_CONCAT(code) AS code FROM gericht g LEFT JOIN gericht_hat_allergen a
             ON g.id = a.gericht_id GROUP BY name ASC LIMIT 5;";
     $result = mysqli_query($link, $sql);

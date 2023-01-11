@@ -4,13 +4,18 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/../models/kategorie.php');
 
 class BewertungController {
 
-    public function Bewertung(RequestData $rd){
+    public function bewertung(RequestData $rd){
+
+
+
         $gericht = "Toll!";
         if(isset($_SESSION['login_ok']) && $_SESSION['login_ok']){
             return view('bewertung', ['$gericht' => $gericht]);
         }
         else {
-         header('/anmeldung');
+            $msg = $_SESSION['login_result_message'] ?? null;
+
+            return view('anmeldung', ['msg' => $msg]);
         }
     }
 }

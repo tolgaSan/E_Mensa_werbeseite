@@ -51,7 +51,7 @@
                     </tr>
                     @if(isset($_SESSION['login_ok']) && $_SESSION['login_ok'])
                         <tr aria-rowspan="5">
-                            <td colspan="5"><a href="/bewertung?id={{$key['$id']}}" id="BewertungText">Bewerten sie das Gericht!</a></td>
+                            <td colspan="5"><a href="/bewertung?id={{$key['id']}}" id="BewertungText">Bewerten sie das Gericht!</a></td>
                         </tr>
                     @endif
                 @endforeach

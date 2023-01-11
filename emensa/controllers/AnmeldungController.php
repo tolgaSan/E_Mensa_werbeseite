@@ -10,6 +10,7 @@ class AnmeldungController{
 
         return view('anmeldung', ['msg' => $msg]);
     }
+
     public function anmeldung_verifizieren(RequestData $rd){
 
         $link = connectdb();
