@@ -21,12 +21,13 @@
             <?php
                 if(isset($_SESSION['login_ok'])){
 
-                    if($_SESSION['login_ok'] == false){
-                        echo "<a href='anmeldung' id='Anmeldung'>Anmelden</a>";
-                    }else{
-                        foreach($name as $nam) echo "Account : ".$nam['name']."<br><br>";
+                    if($_SESSION['login_ok'] == true){
+                        echo "Account : ".$_SESSION['name']."<br><br>";
                         echo "<a href='/abmeldung' id='Anmeldung'> Abmelden/Signout </a>" ;
 
+                    }
+                    else {
+                        echo "<a href='anmeldung' id='Anmeldung'>Anmelden</a>";
                     }
                 }
                 else echo "<a href='anmeldung' id='Anmeldung'>Anmelden</a>";

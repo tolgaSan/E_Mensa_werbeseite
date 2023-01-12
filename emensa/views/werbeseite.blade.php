@@ -58,6 +58,10 @@
                 </tbody>
             </table>
             <a href="/bewertungen" id="Bewertungen">Sehen sie sich unsere letzten Bewertungen an!</a>
+            @if(isset($_SESSION['login_ok']) && $_SESSION['login_ok'])
+            <a href="/meinebewertungen" id="Bewertungen">Oder sehen sie sich ihre Bewertungen an!</a>
+            @endif
+
             <h3 id="AllergenCodes">Folgende Allergencodes enthalten:</h3>
             <table id ="GerichtAllergen" border ="1">
                 <thead>

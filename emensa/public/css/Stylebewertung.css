@@ -155,3 +155,10 @@ footer ul li{
 #BewertungListe {
     grid-column-start: 2;
 }
+#löschen{
+    grid-column-start: 2;
+    text-align: center;
+}
+#hervorheben{
+    background-color: blue;
+}

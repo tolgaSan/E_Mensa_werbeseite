@@ -70,6 +70,7 @@ class AnmeldungController{
         $log = FrontController::logger();
         $log->info("Es wurde sich abgemeldet!");
         $_SESSION['login_ok'] = false;
+        session_destroy();
         header('Location: /werbeseite');
     }
 }

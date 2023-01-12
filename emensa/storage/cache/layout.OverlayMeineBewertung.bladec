@@ -3,31 +3,26 @@
 <head>
  <meta http-equiv="content-type" content="text/html; charset=utf-8">
  <title><?php echo $this->yieldContent('title'); ?></title>
- <link type="text/css" rel="stylesheet" href="./css/style.css" />
+ <link type="text/css" rel="stylesheet" href="./css/styleMeineBewertungen.css" />
 </head>
 <body>
 <div id="header">
  <div id="logo"><img src="./img/mensa.png" alt="Mensa Logo" width="80" height="80"></div>
  <div id="menu">
  <ul id="reitermenu">
- <li><a href ="#ankuendigunganker">Ankündigung</a></li>
- <li><a href ="#koestlichkeitenanker">Speisen</a></li>
- <li><a href ="#zahlenanker">Zahlen</a></li>
- <li><a href ="#kontaktanker">Kontakt</a></li>
- <li><a href ="#wichtigfuerunsanker">Wichtig für uns</a></li>
+ <li>Das sind ihre Bewertungen!</li>
  </ul>
  </div>
  <div id="irgendwas">
  <?php
  if(isset($_SESSION['login_ok'])){
 
- if($_SESSION['login_ok'] == true){
- echo "Account : ".$_SESSION['name']."<br><br>";
+ if($_SESSION['login_ok'] == false){
+ echo "<a href='anmeldung' id='Anmeldung'>Anmelden</a>";
+ }else{
+ echo "Account : " . $_SESSION['name']."<br><br>";
  echo "<a href='/abmeldung' id='Anmeldung'> Abmelden/Signout </a>" ;
 
- }
- else {
- echo "<a href='anmeldung' id='Anmeldung'>Anmelden</a>";
  }
  }
  else echo "<a href='anmeldung' id='Anmeldung'>Anmelden</a>";

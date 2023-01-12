@@ -33,7 +33,7 @@ function GerichtToBild($gericht){
 function isAdmin($name){
     $link = connectdb();
 
-    $sql = "SELECT admin FROM benutzer b WHERE b.name = 'Test'";
+    $sql = "SELECT admin FROM benutzer b WHERE b.name = '$name'";
     $result = mysqli_query($link, $sql)->fetch_array();
     mysqli_close($link);
     return $result[0];

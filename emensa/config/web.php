@@ -26,10 +26,12 @@ return array(
     '/bewertungAbschicken' => 'BewertungController@bewertungAbschicken',
 
     '/bewertungen' => 'BewertungenController@index',
+    '/meinebewertungen' => 'BewertungenController@meineBewertungen',
+    '/bewertungenRueckgaengig' => 'BewertungenController@rueckgaengig',
+    '/bewertungenHervorheben' => 'BewertungenController@hervorheben',
 
     '/anmeldung' => 'AnmeldungController@anmeldung',
     '/anmeldung_verifizieren' => 'AnmeldungController@anmeldung_verifizieren',
     '/abmeldung' => 'AnmeldungController@abmeldung'
-
 
 );

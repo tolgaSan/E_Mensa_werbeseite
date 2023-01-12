@@ -11,12 +11,6 @@ class WerbeseiteController{
 
         $allergen = db_allergen_select_all();
         $tabelle = db_gericht_preisintern_preisextern_allergen_werbeseite();
-        if(isset($_SESSION['email'])){
-            $email = $_SESSION['email'];
-            $sql = "SELECT name FROM benutzer WHERE email = '$email'";
-
-            $name = mysqli_query($link, $sql);
-        }
 
         $log = FrontController::logger();
         $log->info("Es wurde auf die Webseite zugegriffen!");
@@ -24,7 +18,6 @@ class WerbeseiteController{
         return view('werbeseite', [
             'gericht' => $tabelle,
             'allergen' => $allergen,
-            'name' => $name
         ]);
     }
 
