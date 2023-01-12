@@ -22,10 +22,7 @@ class WerbeseiteController{
         $log->info("Es wurde auf die Webseite zugegriffen!");
 
         return view('werbeseite', [
-            'id' => $tabelle,
             'gericht' => $tabelle,
-            'preis_intern' => $tabelle,
-            'preis_extern' => $tabelle,
             'allergen' => $allergen,
             'name' => $name
         ]);

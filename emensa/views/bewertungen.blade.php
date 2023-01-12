@@ -14,13 +14,13 @@
                 <th>Datum</th>
                 </thead>
                 <tbody>
-                @foreach($Reviews as $vars)
+                @foreach($liste as $vars)
                     <tr>
-                        <td>{{$vars["benutzerName"]}}</td>
-                        <td>{{$vars["Gericht"]}}</td>
-                        <td>{{$vars["Bewertung"]}}</td>
-                        <td>{{$vars["Bemerkung"]}}</td>
-                        <td>{{$vars["Datum"]}}</td>
+                        <td>{{$vars['benutzerName']}}</td>
+                        <td>{{$vars['Gericht']}}</td>
+                        <td>{{$vars['Bewertung']}}</td>
+                        <td>{{$vars['Bemerkung']}}</td>
+                        <td>{{$vars['Datum']}}</td>
                     </tr>
                 @endforeach
                 </tbody>

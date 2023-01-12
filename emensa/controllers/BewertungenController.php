@@ -13,11 +13,7 @@
             $Reviews = getAll30NewestReviews();
 
            return view('bewertungen' ,  [
-               'benutzerName' => $Reviews,
-               'Gericht' => $Reviews,
-               'Bewertung' => $Reviews,
-               'Bemerkung' => $Reviews,
-               'Datum' => $Reviews
+               'liste' => $Reviews,
            ]);
         }
     }
