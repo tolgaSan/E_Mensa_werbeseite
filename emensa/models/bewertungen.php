@@ -4,8 +4,9 @@
 
         $sql = "SELECT benutzerName, Gericht, Bewertung, Bemerkung, Datum FROM bewertung
                 ORDER BY Datum DESC LIMIT 30";
-        $result = mysqli_query($link, $sql)->fetch_array();
-        mysqli_close($link);
+        $result = mysqli_query($link, $sql);
+        $data = mysqli_fetch_all($result, MYSQLI_BOTH);
 
-        return $result;
+        mysqli_close($link);
+        return $data;
     }
