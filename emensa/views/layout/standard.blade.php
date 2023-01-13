@@ -31,8 +31,7 @@
                     }
                 }
                 else echo "<a href='anmeldung' id='Anmeldung'>Anmelden</a>";
-            ?>
-
+            ?><br><br>
     </div>
 </div>
 <div>

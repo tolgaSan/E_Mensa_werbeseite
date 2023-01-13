@@ -15,6 +15,8 @@
                 $isAdmin = 0;
             }
 
+            $_SESSION['target'] = '/bewertungen';
+
            return view('bewertungen' ,  [
                'liste' => $Reviews,
                'isAdmin' => $isAdmin
@@ -22,6 +24,11 @@
         }
 
         public function meineBewertungen(RequestData $rd){
+
+            if(!(isset($_SESSION['login_ok']) && $_SESSION['login_ok'])){
+                $_SESSION['target'] = '/meinebewertungen';
+                header('Location: /anmeldung');
+            }
 
             $MyReviews = getAllReviewsAccount($_SESSION['name']);
 

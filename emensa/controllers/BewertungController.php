@@ -7,7 +7,13 @@ class BewertungController {
 
     public function index(RequestData $rd){
 
-        $gerichtID = $_GET['id'];
+        if(isset($_GET['id'])){
+            $gerichtID = $_GET['id'];
+        }
+        else{
+            $gerichtID = 1;
+        }
+
         $gericht = IdToGericht($gerichtID);
         $gerichtBild = GerichtToBild($gericht);
         if(isset($_SESSION['login_ok']) && $_SESSION['login_ok']){
@@ -18,8 +24,9 @@ class BewertungController {
         }
         else {
             $msg = $_SESSION['login_result_message'] ?? null;
+            $_SESSION['target'] = '/bewertung?id=1';
 
-            return view('anmeldung', ['msg' => $msg]);
+            header('Location: /anmeldung');
         }
     }
 

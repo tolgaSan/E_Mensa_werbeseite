@@ -50,7 +50,7 @@ class AnmeldungController{
                 $log = FrontController::logger();
                 $log->info("Anmeldung! : " . $userlogin);
 
-                header('Location: /werbeseite');
+                header("Location: ". $_SESSION['target']);
             }else{
 
                 $_SESSION['login_result_message'] = 'Fehlerhaft. Bitte erneut eingeben';

@@ -26,5 +26,4 @@
     <input type="submit" name="sent" value="Anmelden/Sign in">
     </fieldset>
 </form>
-
 </body>

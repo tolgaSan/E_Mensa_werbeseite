@@ -26,8 +26,10 @@
                 }
             }
             else echo "<a href='anmeldung' id='Anmeldung'>Anmelden</a>";
-        ?>
-
+        ?><br><br>
+        <form action="/back" method="POST">
+            <button type="submit" id="submit">Zurück!</button>
+        </form>
     </div>
 </div>
 <div>

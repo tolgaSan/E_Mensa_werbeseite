@@ -21,4 +21,8 @@ class WerbeseiteController{
         ]);
     }
 
+    public function back(RequestData $rd) : void{
+        header('Location: /werbeseite');
+    }
+
 }
