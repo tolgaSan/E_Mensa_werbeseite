@@ -30,6 +30,8 @@ return array(
     '/bewertungenRueckgaengig' => 'BewertungenController@rueckgaengig',
     '/bewertungenHervorheben' => 'BewertungenController@hervorheben',
     '/back' => 'WerbeseiteController@back',
+    '/loeschen' => 'BewertungenController@loeschen',
+
 
     '/anmeldung' => 'AnmeldungController@anmeldung',
     '/anmeldung_verifizieren' => 'AnmeldungController@anmeldung_verifizieren',

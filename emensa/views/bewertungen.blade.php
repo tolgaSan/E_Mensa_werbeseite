@@ -52,14 +52,8 @@
                 </tbody>
             </table>
             @if(isset($_SESSION['login_ok']) && $_SESSION['login_ok'])
-            <a href="?function=1" id="löschen" onclick="confirm('Wollen sie ihre Bewertungen wirklich löschen?')" >Wollen sie ihre Bewertungen löschen?</a>
+            <a href="/loeschen" id="löschen" onclick="confirm('Wollen sie ihre Bewertungen wirklich löschen?')" >Wollen sie ihre Bewertungen löschen?</a>
             @endif
         </div>
     </div>
 @endsection
-
-<?php
-    if(isset($_GET['function'])){
-        deleteAllReviewsAccount($_SESSION['name']);
-    }
-?>

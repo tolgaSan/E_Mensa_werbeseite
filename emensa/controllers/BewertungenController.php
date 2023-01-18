@@ -48,4 +48,9 @@
 
             header('Location: /bewertungen');
         }
+
+        public function loeschen(){
+            deleteAllReviewsAccount($_SESSION['name']);
+            header('Location: /bewertungen');
+        }
     }

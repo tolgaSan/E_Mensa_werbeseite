@@ -53,15 +53,9 @@
  </tbody>
  </table>
  <?php if(isset($_SESSION['login_ok']) && $_SESSION['login_ok']): ?>
- <a href="?function=1" id="löschen" onclick="confirm('Wollen sie ihre Bewertungen wirklich löschen?')" >Wollen sie ihre Bewertungen löschen?</a>
+ <a href="/loeschen" id="löschen" onclick="confirm('Wollen sie ihre Bewertungen wirklich löschen?')" >Wollen sie ihre Bewertungen löschen?</a>
  <?php endif; ?>
  </div>
  </div>
 <?php $this->stopSection(); ?>
-
-<?php
- if(isset($_GET['function'])){
- deleteAllReviewsAccount($_SESSION['name']);
- }
-?>
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('layout.Overlaybemerkungen'); } ?>
